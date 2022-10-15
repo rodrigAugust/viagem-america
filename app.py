@@ -56,6 +56,3 @@ def index():
             aEstrelaWay, aEstrelaValor = hea.a_estrela(origem, destino)
 
             return render_template('index.html', custUniformWay=custUniformWay, custUniformValor=custUniformValor, greedyWay=greedyWay, greedyValor=greedyValor, aEstrelaWay=aEstrelaWay, aEstrelaValor=aEstrelaValor, peso=peso)
-
-if __name__ == "__main__":
-    app.run(debug=True)
