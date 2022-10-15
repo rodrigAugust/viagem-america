@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="https://raw.githubusercontent.com/rodrigAugust/images/main/4262b7fb11ba0e5-unscreen.gif">
+
+    <!--css-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: thin;
+            scrollbar-color: #ff4500 #070d12;
+        }
+
+        /* Works on Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #070d12;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #ff4500;
+            border-radius: 20px;
+            border: 3px solid #070d12;
+        }
+
+        body {
+            background-image: url(https://raw.githubusercontent.com/rodrigAugust/images/main/background-site.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'VT323', monospace;
+            font-size: 18px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .card {
+            background-color: #111;
+            width: 370px;
+            border: 2px solid #ff4500;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+
+        .card .info {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card .info .title {
+            font-size: 26px;
+        }
+
+        .card .info .sub-title {
+            font-size: 20px;
+            color: #b8bbc5;
+        }
+
+        .card .info p {
+            font-size: 18px;
+            color: #b8bbc5;
+            padding-left: 10px;
+        }
+
+        .card .content {
+            margin-top: 15px;
+        }
+
+        .card .content .tabs {
+            display: flex;
+        }
+
+        .card .content .tabs .tab {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .card .content .tabs .tab:hover {
+            background-color: #333;
+            transition: background-lor 0.2s easy-in-out;
+        }
+
+        .card .content .tabs .tab img {
+            width: 50px;
+        }
+
+        .card .content .tabs .tab.select {
+            background-color: #222;
+        }
+
+        .card .content .form {
+            flex-direction: column;
+            gap: 25px;
+            justify-content: center;
+            display: none;
+        }
+
+        .card .content .form.select {
+            display: block;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .card .content .form.select .title {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .card .content .form .form-light,
+        .card .content .form .form-heavy {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .card .content .form .form-light .text-form,
+        .card .content .form .form-heavy .text-form {
+            background-color: #fff;
+            height: 25px;
+            width: 250px;
+            font-family: 'VT323', monospace;
+            font-size: 18px;
+            border: 2px solid #ff4500;
+            padding-left: 10px;
+            overflow: hidden;
+            gap: 10px;
+        }
+
+        .card .content .form .form-light .confirm,
+        .card .content .form .form-heavy .confirm {
+            background-color: #ff4500;
+            min-width: 150px;
+            font-family: 'VT323', monospace;
+            font-size: 18px;
+            border: 2px solid #ff4500;
+            padding: 5px;
+            margin-top: 15px;
+        }
+
+        .card .content .form .form-light .confirm:hover,
+        .card .content .form .form-heavy .confirm:hover {
+            background-color: #222;
+            color: #ff4500;
+            border: 2px solid #ff4500;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .card .content .form .form-light .reset,
+        .card .content .form .form-heavy .reset {
+            background-color: #222;
+            min-width: 150px;
+            font-family: 'VT323', monospace;
+            color: #ff4500;
+            font-size: 18px;
+            border: 2px solid #ff4500;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        .card .content .form .form-light .reset:hover,
+        .card .content .form .form-heavy .reset:hover {
+            background-color: #ff4500;
+            color: #000;
+            border: 2px solid #ff4500;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .card .content .form.select {
+            background-color: #222;
+        }
+
+        .card .content .form.select .ways .span-method {
+            padding-left: 10px;
+            padding-bottom: 15px;
+        }
+    </style>
+
+    <title>Viagem pela América</title>
+</head>
+
+<body>
+    <main class="card">
+        <div class="info">
+            <h1 class="title">Viagem pela América</h1>
+            <h2 class="sub-title">Paises disponiveis:</h2>
+            <p>Argentina, Bolivia, Brasil, Canada, Chile, Colombia, Costa Rica, Cuba, Euqador, Estados Unidos,
+                Guiana Francesa, Groelandia, Guatemala, Jamaica, Mexico, Nicaragua, Peru, Paraguai, Republica
+                Dominicana, Uruguai, Venezuela</p>
+        </div>
+        <div class="content">
+            <ul class="tabs">
+                <li class="tab select" id="light">
+                    <img src="https://raw.githubusercontent.com/rodrigAugust/images/main/light.png"
+                        alt="icone sem peso">
+                </li>
+                <li class="tab" id="heavy">
+                    <img src="https://raw.githubusercontent.com/rodrigAugust/images/main/heavy.png"
+                        alt="icone com peso">
+                </li>
+            </ul>
+            <div class="form select" id="form-light">
+                <h3 class="title">Busca sem Peso</h3>
+                <form action="/" class="form-light" method="post">
+                    <label for="country-origin" class="label-form">País de origem:</label>
+                    <input type="text" id="country-origin" name="country-origin" class="text-form" required></input>
+
+                    <label for="country-destiny" class="label-form">País de destino:</label>
+                    <input type="text" id="country-destiny" name="country-destiny" class="text-form" required></input>
+
+                    <label for="limit" class="label-form">Limite</label>
+                    <input type="number" id="limit" name="limit" class="text-form" required></input>
+
+                    <button type="submit" class="confirm" id="confirm" name="confirm" value="light">Confirmar</button>
+                    <button type="reset" class="reset" id="reset" name="reset">Limpar</button>
+                </form>
+                {% if peso == "light" %}
+                <div class="ways">
+                    <h3 class="title">Amplitude</h3>
+                    <span class="span-method">{{ amplitude }}</span>
+
+                    <h3 class="title">Profundidade</h3>
+                    <span class="span-method">{{ profundidade }}</span>
+
+                    <h3 class="title">Profundidade Limitada</h3>
+                    <span class="span-method">{{ profunLimitada }}</span>
+
+                    <h3 class="title">Bidirecional</h3>
+                    <span class="span-method">{{ bidirecional }}</span>
+
+                    <h3 class="title">Aprofundamento Iterativo</h3>
+                    <span class="span-method">{{ aprofIterativo }}</span>
+                </div>
+                {% endif %}
+            </div>
+            <div class="form" id="form-heavy">
+                <h3 class="title">Busca com Peso</h3>
+                <form action="/" class="form-heavy" method="post">
+                    <label for="country-origin" class="label-form">País de origem:</label>
+                    <input type="text" id="country-origin" name="country-origin" class="text-form"></input>
+
+                    <label for="country-destiny" class="label-form">País de destino:</label>
+                    <input type="text" id="country-destiny" name="country-destiny" class="text-form"></input>
+
+                    <button type="submit" class="confirm" id="confirm" name="confirm" value="heavy">Confirmar</button>
+                    <button type="reset" class="reset" id="reset" name="reset">Limpar</button>
+                </form>
+                {% if peso == "heavy" %}
+                <div class="ways">
+                    <h3 class="title">Custo Uniforme</h3>
+                    <span class="span-method">Caminho: {{ custUniformWay }}</span>
+                    <br>
+                    <span class="span-method">Custo: {{ custUniformValor }}</span>
+
+                    <h3 class="title">Greedy</h3>
+                    <span class="span-method">Caminho: {{ greedyWay }}</span>
+                    <br>
+                    <span class="span-method">Custo: {{ greedyValor }}</span>
+
+                    <h3 class="title">A*</h3>
+                    <span class="span-method">Caminho: {{ aEstrelaWay }}</span>
+                    <br>
+                    <span class="span-method">Custo: {{ aEstrelaValor }}</span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <script>
+        const tabs = document.querySelectorAll(".tab")
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", function () {
+                if (tab.classList.contains("select")) {
+                    return;
+                }
+
+                selectTab(tab);
+                selectInfo(tab);
+          });
+        });
+
+        function selectTab(tab){
+            const tabSelect = document.querySelector(".tab.select");
+            tabSelect.classList.remove("select");
+            tab.classList.add("select");
+        }
+
+        function selectInfo(tab){
+            const formSelect = document.querySelector(".form.select");
+            formSelect.classList.remove("select");
+
+            const idDoElementoDoFormulario = `form-${tab.id}`
+            const formASerMostrado = document.getElementById(idDoElementoDoFormulario);
+            formASerMostrado.classList.add("select");
+        }
+    </script>
+</body>
+
+</html>
