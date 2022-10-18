@@ -1,0 +1,30 @@
+Comandos para instalar o Flask:
+
+1 - Navegue pelo terminal até a pasta do projeto usando os comandos:
+
+cd <nome da pasta> - até estar em viagem-america
+cd .. - retornar uma pasta caso entre em algum diretório errado
+
+2 - Tendo o Python instalado em sua máquina, dê o comando no seu terminal:
+
+pip install flask
+
+3 - Temos agora que configurar o app do flask com o comando:
+
+set FLASK_APP=app.py
+
+4 - Agora precisamos colocar a variavel env do flask em modo de desenvolvedor usando o comando:
+
+$env:FLASK_ENV = "development"
+
+5 - Com todos os comandos devidamente executados precisamos rodar o servidor flask com o comando:
+
+flask run
+
+6 - Com isso ele iniciará um servidor local na porta 5000 do seu computador, para acessa-lo vá até o navegador e digite na URL:
+
+localhost:5000
+
+7 - Todos os caminhos são mostrados abaixo do formulário de informação
+
+8 - Quando o formulário da busca com peso é executado ele retorna para a aba de busca sem peso, mas é só retornar para a aba de busca com peso e scrollar a tela até o final e todas as informaçõoes estarão lá
