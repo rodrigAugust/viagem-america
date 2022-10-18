@@ -107,8 +107,13 @@ class lista(object):
         while atual.estado != valor:
             atual = atual.proximo
     
+        if atual.pai == None:
+            atual= atual
+        else: 
+            atual = atual.pai
+
         caminho = []
-        atual = atual.pai
+       
         while atual.pai is not None:
             caminho.append(atual.estado)
             atual = atual.pai

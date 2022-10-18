@@ -28,3 +28,5 @@ localhost:5000
 7 - Todos os caminhos são mostrados abaixo do formulário de informação
 
 8 - Quando o formulário da busca com peso é executado ele retorna para a aba de busca sem peso, mas é só retornar para a aba de busca com peso e scrollar a tela até o final e todas as informaçõoes estarão lá
+
+9 - Alberto resolveu o problema de caminhos com só 2 nós
