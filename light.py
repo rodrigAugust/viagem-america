@@ -181,7 +181,7 @@ class busca(object):
                         caminho = []
                         caminho += l2.exibeCaminho()
                         #print("Fila:\n",l1.exibeLista())
-                        #print("\nÁrvore de busca:\n",l2.exibeLista())
+                        print("\nÁrvore de busca amplitude:\n",l2.exibeLista())
                         return caminho
 
         return "caminho não encontrado"
@@ -246,7 +246,7 @@ class busca(object):
                         caminho = []
                         caminho += l2.exibeCaminho()
                         #print("Fila:\n",l1.exibeLista())
-                        #print("\nÁrvore de busca:\n",l2.exibeLista())
+                        print("\nÁrvore de busca profundidade:\n",l2.exibeLista())
                         return caminho
         return "caminho não encontrado"
     
@@ -310,7 +310,7 @@ class busca(object):
                             caminho = []
                             caminho += l2.exibeCaminho()
                             #print("Fila:\n",l1.exibeLista())
-                            #print("\nÁrvore de busca:\n",l2.exibeLista())
+                            print("\nÁrvore de busca profundidade limitada:\n",l2.exibeLista())
                             return caminho
         return "caminho não encontrado"
     
@@ -376,7 +376,7 @@ class busca(object):
                                 caminho = []
                                 caminho += l2.exibeCaminho()
                                 #print("Fila:\n",l1.exibeLista())
-                                #print("\nÁrvore de busca:\n",l2.exibeLista())
+                                print("\nÁrvore de busca aprodundamento interativo:\n",l2.exibeLista())
                                 return caminho
         return "caminho não encontrado"
     
@@ -461,8 +461,8 @@ class busca(object):
                         if flag:
                             caminho = []
                             #print("Fila:\n",l1.exibeLista())
-                            #print("\nÁrvore de busca:\n",l2.exibeLista())
-                            #print("\nÁrvore de busca:\n",l4.exibeLista())
+                            print("\nÁrvore de busca:\n",l2.exibeLista())
+                            print("\nÁrvore de busca:\n",l4.exibeLista())
                             caminho += l2.exibeCaminho()
                             caminho += l4.exibeCaminho1(novo)
                             return caminho
@@ -512,8 +512,8 @@ class busca(object):
                         if flag:
                             caminho = []
                             #print("Fila:\n",l3.exibeLista())
-                            #print("\nÁrvore de busca:\n",l4.exibeLista())
-                            #print("\nÁrvore de busca:\n",l2.exibeLista())
+                            print("\nÁrvore de busca bidirecional:\n",l4.exibeLista())
+                            print("\nÁrvore de busca bidirecional:\n",l2.exibeLista())
                             caminho += l4.exibeCaminho()
                             caminho += l2.exibeCaminho1(novo)
                             return caminho[::-1]
@@ -524,7 +524,7 @@ class busca(object):
  
 """
 ********************************************************************
-                     PROBLEMA: MAPA DA ROMÊNIA
+                     PROBLEMA: MAPA DA AMÉRICA
 ********************************************************************
 """
 

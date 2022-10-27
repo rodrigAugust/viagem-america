@@ -174,8 +174,8 @@ class busca(object):
             if atual.estado == fim:
                 caminho = []
                 caminho = l2.exibeArvore2(atual.estado,atual.valor1)
-                #print("Cópia da árvore:\n",l2.exibeLista())
-                #print("\nÁrvore de busca:\n",l1.exibeLista(),"\n")
+                print("Cópia da árvore custo uniforme:\n",l2.exibeLista())
+                #print("\nÁrvore de busca custo uniforme:\n",l1.exibeLista(),"\n")
 
                 return caminho, atual.valor2
         
@@ -213,9 +213,9 @@ class busca(object):
             h = []
             for i in range(len(nos)):
                 if no == destino:
-                    h.append(0)
+                    h [i] = 0
                 else:
-                    valor = custo*random.uniform(0.1, 0.9)
+                    valor = custo*0.9
                     h.append(valor)
                     
             return h
@@ -239,8 +239,8 @@ class busca(object):
             if atual.estado == fim:
                 caminho = []
                 caminho = l2.exibeArvore2(atual.estado,atual.valor1)
-                #print("Cópia da árvore:\n",l2.exibeLista())
-                #print("\nÁrvore de busca:\n",l1.exibeLista(),"\n")
+                print("Cópia da árvore greedy:\n",l2.exibeLista())
+                #print("\nÁrvore de busca greedy:\n",l1.exibeLista(),"\n")
 
                 return caminho, atual.valor2
         
@@ -296,8 +296,8 @@ class busca(object):
             if atual.estado == fim:
                 caminho = []
                 caminho = l2.exibeArvore2(atual.estado,atual.valor1)
-                #print("Cópia da árvore:\n",l2.exibeLista())
-                #print("\nÁrvore de busca:\n",l1.exibeLista(),"\n")
+                print("Cópia da árvore A*:\n",l2.exibeLista())
+                #print("\nÁrvore de busca A*:\n",l1.exibeLista(),"\n")
 
                 return caminho, atual.valor2
         
@@ -360,7 +360,7 @@ grafo = [
         #guiana francesa
         [["REPUPLICA DOMINICANA", 2476], ["VENEZUELA", 1515]],
         #groelandia
-        [["CANADA", 3337], ["ESTADO UNIDOS", 5684]],
+        [["CANADA", 3337], ["ESTADOS UNIDOS", 5684]],
         #guatemala
         [["COSTA RICA", 1445], ["CUBA", 1457], ["ESTADOS UNIDOS", 5684]],
         #jamaica
